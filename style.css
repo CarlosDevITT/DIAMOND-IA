@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+.main {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container {
+  padding: 10px;
+}
+
+.main .image-container .image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main .image-container .image img {
+  width: 350px;
+  align-items: center;
+}
+
+
+.main .image-container h1 {
+  color: #00bcd4;
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 40px;
+}
+
+.main .image-container p {
+  color: #324042;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.main .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 60px; /* Aumentei a altura para dar mais espaço */
+  border-radius: 20px;
+  background: rgba(202, 253, 255, 0);
+  padding: 10px; /* Adiciona um pouco de preenchimento */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para profundidade */
+}
+
+.main .input .talk,
+.main .input #stop {
+  background: #00bcd4; /* Cor de fundo do botão */
+  color: white; /* Cor do texto */
+  border: none; /* Remove bordas */
+  border-radius: 10px; /* Bordas arredondadas */
+  width: 100px; /* Largura fixa para os botões */
+  height: 40px; /* Altura fixa para os botões */
+  font-size: 16px; /* Tamanho da fonte */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  margin: 0 10px; /* Margem entre os botões */
+  transition: background 0.3s, transform 0.1s; /* Transições suaves */
+}
+
+.main .input .talk:hover,
+.main .input #stop:hover {
+  background: #0097a7; /* Cor de fundo ao passar o mouse */
+}
+
+.main .input .talk:active,
+.main .input #stop:active {
+  transform: scale(0.95); /* Efeito de pressionar */
+}
+
+.main .input .content {
+  color: #aebed0;
+  font-size: 15px;
+  margin-left: 20px; /* Margem à esquerda para separar do botão */
+}
+
+.main .input #interim {
+  color: gray;
+  font-size: 14px; /* Tamanho da fonte para transcrição intermediária */
+  margin-left: 20px; /* Margem à esquerda para separar do botão */
+}
+
+.main .input #status {
+  color: #00bcd4; /* Cor do texto de status */
+  font-weight: bold; /* Negrito para destaque */
+  margin-left: 20px; /* Margem à esquerda para separar do botão */
+}
+
+.input {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+#userInput {
+
+  width: 100%;
+
+  padding: 10px;
+
+  margin: 10px 0;
+
+  border: 1px solid #ccc;
+
+  border-radius: 4px;
+
+}
+
+
+#sendRequest {
+
+  padding: 5px;
+
+  background-color: #28a745;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 4px;
+
+  cursor: pointer;
+
+}
+
+
+#sendRequest:hover {
+
+  background-color: #218838;
+
+}
+
+
+#respostas {
+
+  margin-top: 20px;
+
+}
+
+@media (max-width: 768px) {
+  .main {
+      position: fixed;
+  
+      background-color: rgba(0, 0, 0, 0.9); /* Fundo semi-transparente */
+      border-radius: 65px; /* Bordas arredondadas */
+      padding: 20px; /* Espaçamento interno */
+
+      transition: transform 0.3s; /* Transição suave */
+  }
+
+  .image-container {
+      text-align: center; /* Centraliza o texto */
+  }
+}

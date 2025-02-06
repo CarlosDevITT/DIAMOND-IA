@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- config mobile -->
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="manifest.json">
+      <!-- Adicionando o browserconfig -->
+      <meta name="msapplication-config" content="browserconfig.xml">
+       <!-- fim browserconfig -->
+    <title>DIAMOND - Virtual Assistant</title>
+    <link rel="shortcut icon" href="assets/avatar.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <section class="main">
+        <div class="image-container">
+            <div class="image">
+                <img src="assets/giphy.gif" alt="image">
+            </div>
+            <h1>D I A M O N D</h1>
+            <p>Sou Assistente Virtual DIAMOND, em que posso te ajudar?</p>
+        </div>
+        <div class="input">
+            <button class="talk" id="start"><i class="fas fa-microphone-alt"></i> Iniciar</button>
+            <button id="stop" style="display:none;">Parar</button>
+            <p id="interim" style="color: gray;"></p>
+            <p id="status" style="display:none;">Escutando...</p>
+        </div>
+        <div class="input">
+            <input type="text"  id="userInput" placeholder="Digite sua pergunta aqui...">
+            <button  id="sendRequest">Enviar</button> <!-- Botão para enviar a solicitação -->
+        </div>
+        <div id="respostas"></div> <!-- Div para exibir as respostas -->
+    </section>
+    <script src="js/blackbox.js"></script>
+    <script src="app.js"></script>
+    <script src="service-worker.js"></script>
+</body>
+
+</html>
