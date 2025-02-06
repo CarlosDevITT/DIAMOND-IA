@@ -30,10 +30,9 @@ function speak(text) {
     window.speechSynthesis.speak(textSpeak);
 }
 
-
-
 // Atualiza as vozes quando a lista mudar
 speechSynthesis.onvoiceschanged = populateVoices;
+
 function wishMe() {
     const hour = new Date().getHours();
     if (hour < 12) {
@@ -41,7 +40,7 @@ function wishMe() {
     } else if (hour < 18) {
         speak("Boa tarde, Senhor...");
     } else {
-        speak("Boa noite, Senhor... como voce esta?");
+        speak("Boa noite, Senhor... como você está?");
     }
 }
 
@@ -54,7 +53,7 @@ if ("webkitSpeechRecognition" in window) {
     const recognition = new webkitSpeechRecognition();
 
     // Configurações do reconhecimento
-    recognition.continuous = true; // Mantém o reconhecimento ativo
+    recognition.continuous = false; // Não mantém o reconhecimento ativo
     recognition.interimResults = true; // Permite resultados intermediários
     recognition.lang = 'pt-BR'; // Define o idioma para português do Brasil
 
@@ -62,7 +61,7 @@ if ("webkitSpeechRecognition" in window) {
     let interim_transcript = "";
 
     // Manipulador de evento quando o reconhecimento começa
-    recognition .onstart = () => {
+    recognition.onstart = () => {
         status.style.display = 'block';
         status.textContent = "Escutando...";
     };
@@ -161,14 +160,14 @@ function askNotificationPermission() {
     Notification.requestPermission().then(function(permission) {
         if (permission === 'granted') {
             console.log('Permissão para notificações concedida.');
-            subscribeUserToPush();
+            subscribeUser ToPush();
         } else {
             console.log('Permissão para notificações negada.');
         }
     });
 }
 
-function subscribeUserToPush() {
+function subscribeUser ToPush() {
     navigator.serviceWorker.ready.then(function(registration) {
         const applicationServerKey = urlB64ToUint8Array('<YOUR_PUBLIC_VAPID_KEY>');
         registration.pushManager.subscribe({
