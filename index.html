@@ -1,46 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- config mobile -->
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="manifest" href="manifest.json">
-      <!-- Adicionando o browserconfig -->
-      <meta name="msapplication-config" content="browserconfig.xml">
-       <!-- fim browserconfig -->
-    <title>DIAMOND - Virtual Assistant</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="assets/avatar.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-
-<body>
-    <section class="main">
-        <div class="image-container">
-            <div class="image">
-                <img src="assets/giphy.gif" alt="image">
+     <!-- config mobile -->
+     <link rel="manifest" href="site.webmanifest">
+     <link rel="manifest" href="manifest.json">
+     
+       <!-- Adicionando o browserconfig -->
+       <meta name="msapplication-config" content="browserconfig.xml">
+    <title>DIAMOND - Virtual Assistant</title>
+    <!-- Linking Google Fonts For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- App Header -->
+      <header class="app-header">
+          <h4 class="sub-heading">Olá, tudo bem?</h4>
+        <h1 class="heading">Sou Assistente Virtual DIAMOND,</h1>
+        <h4 class="sub-heading">em que posso te ajudar?</h4>
+      </header>
+      <!-- Suggestions List -->
+      <ul class="suggestions">
+        <li class="suggestions-item">
+          <p class="text">Soluções inovadoras em IA para micro e pequenas empresas.</p>
+          <span class="icon material-symbols-rounded">draw</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Soluções inteligentes para o crescimento do seu negócio em 2025?</p>
+          <span class="icon material-symbols-rounded">lightbulb</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text"> DIAMOND IA, Agente de Inteligência Artificial & Assistente Virtual.</p>
+          <span class="icon material-symbols-rounded">explore</span>
+        </li>
+        <li class="suggestions-item">
+          <p class="text">Serviços em Inteligência Artificial e Tecnologia.</p>
+          <span class="icon material-symbols-rounded">code_blocks</span>
+        </li>
+      </ul>
+      <!-- Chats -->
+      <div class="chats-container"></div>
+      <!-- Prompt Input -->
+      <div class="prompt-container">
+        <div class="prompt-wrapper">
+          <form action="#" class="prompt-form">
+            <input type="text" placeholder=" Ask DIAMOND " class="prompt-input" required />
+            <div class="prompt-actions">
+              <!-- File Upload Wrapper -->
+              <div class="file-upload-wrapper">
+                <img src="#" class="file-preview" />
+                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
+                <button type="button" class="file-icon material-symbols-rounded">description</button>
+                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
+                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
+              </div>
+              <!-- Send Prompt and Stop Response Buttons -->
+              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
+              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
             </div>
-            <h1>D I A M O N D</h1>
-            <p>Sou Assistente Virtual DIAMOND, em que posso te ajudar?</p>
+          </form>
+          <!-- Theme and Delete Chats Buttons -->
+          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
+          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
         </div>
-        <div class="input">
-            <button class="talk" id="start"><i class="fas fa-microphone-alt"></i> Iniciar</button>
-            <button id="stop" style="display:none;">Parar</button>
-            <p id="interim" style="color: gray;"></p>
-            <p id="status" style="display:none;">Escutando...</p>
-        </div>
-        <div class="input">
-            <input type="text"  id="userInput" placeholder="Digite sua pergunta aqui...">
-            <button  id="sendRequest">Enviar</button> <!-- Botão para enviar a solicitação -->
-        </div>
-        <div id="respostas"></div> <!-- Div para exibir as respostas -->
-    </section>
-    <script src="js/blackbox.js"></script>
-    <script src="app.js"></script>
-    <script src="service-worker.js"></script>
-</body>
-
+        <p class="disclaimer-text">O DIAMOND pode cometer erros, então verifique duas vezes.</p>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
 </html>
