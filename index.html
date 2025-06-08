@@ -1,75 +1,143 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="assets/avatar.png" type="image/x-icon">
      <!-- config mobile -->
      <link rel="manifest" href="site.webmanifest">
      <link rel="manifest" href="manifest.json">
-     
-       <!-- Adicionando o browserconfig -->
-       <meta name="msapplication-config" content="browserconfig.xml">
+    
     <title>DIAMOND - Virtual Assistant</title>
-    <!-- Linking Google Fonts For Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@32,400,0,0" />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <!-- App Header -->
-      <header class="app-header">
-          <h4 class="sub-heading">Olá, tudo bem?</h4>
-        <h1 class="heading">Sou Assistente Virtual DIAMOND,</h1>
-        <h4 class="sub-heading">em que posso te ajudar?</h4>
-      </header>
-      <!-- Suggestions List -->
-      <ul class="suggestions">
-        <li class="suggestions-item">
-          <p class="text">Soluções inovadoras em IA para micro e pequenas empresas.</p>
-          <span class="icon material-symbols-rounded">draw</span>
-        </li>
-        <li class="suggestions-item">
-          <p class="text">Soluções inteligentes para o crescimento do seu negócio em 2025?</p>
-          <span class="icon material-symbols-rounded">lightbulb</span>
-        </li>
-        <li class="suggestions-item">
-          <p class="text"> DIAMOND IA, Agente de Inteligência Artificial & Assistente Virtual.</p>
-          <span class="icon material-symbols-rounded">explore</span>
-        </li>
-        <li class="suggestions-item">
-          <p class="text">Serviços em Inteligência Artificial e Tecnologia.</p>
-          <span class="icon material-symbols-rounded">code_blocks</span>
-        </li>
-      </ul>
-      <!-- Chats -->
-      <div class="chats-container"></div>
-      <!-- Prompt Input -->
-      <div class="prompt-container">
-        <div class="prompt-wrapper">
-          <form action="#" class="prompt-form">
-            <input type="text" placeholder=" Ask DIAMOND " class="prompt-input" required />
-            <div class="prompt-actions">
-              <!-- File Upload Wrapper -->
-              <div class="file-upload-wrapper">
-                <img src="#" class="file-preview" />
-                <input id="file-input" type="file" accept="image/*, .pdf, .txt, .csv" hidden />
-                <button type="button" class="file-icon material-symbols-rounded">description</button>
-                <button id="cancel-file-btn" type="button" class="material-symbols-rounded">close</button>
-                <button id="add-file-btn" type="button" class="material-symbols-rounded">attach_file</button>
-              </div>
-              <!-- Send Prompt and Stop Response Buttons -->
-              <button id="stop-response-btn" type="button" class="material-symbols-rounded">stop_circle</button>
-              <button id="send-prompt-btn" class="material-symbols-rounded">arrow_upward</button>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header e Navegação -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <span>D</span>iamond
             </div>
-          </form>
-          <!-- Theme and Delete Chats Buttons -->
-          <button id="theme-toggle-btn" class="material-symbols-rounded">light_mode</button>
-          <button id="delete-chats-btn" class="material-symbols-rounded">delete</button>
+            <nav class="nav-links">
+                <a href="index.html" class="active">Início</a>
+                <a href="./mvp/capacidades.html">Capacidades</a>
+                <a href="./mvp/index.html">Demonstração</a>
+            </nav>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <p class="disclaimer-text">O DIAMOND pode cometer erros, então verifique duas vezes.</p>
-      </div>
+    </header>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu">
+        <a href="" class="active">Início</a>
+        <a href="./mvp/capacidades.html">Capacidades</a>
+        <a href="./mvp/index.html">Demonstração</a>
     </div>
-    <script src="js/script.js"></script>
-  </body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text slide-in-left">
+                <h1 class="hero-title">Conheça o <span>DIAMOND</span>, seu assistente de IA avançado</h1>
+                <p class="hero-subtitle">Uma plataforma inteligente projetada para auxiliar em uma ampla gama de tarefas, desde pesquisas e análises até desenvolvimento de software e criação de conteúdo.</p>
+                <div class="hero-buttons">
+                    <a href="./mvp/capacidades.html" class="btn btn-primary">Explorar Capacidades</a>
+                    <a href="./mvp/index.html" class="btn btn-outline">Ver Demonstração</a>
+                </div>
+            </div>
+            <div class="hero-image slide-in-right">
+                <img src="assets/avatar.png" alt="Ilustração do DIAMOND AI">
+            </div>
+        </div>
+    </section>
+
+    <!-- Visão Geral -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>O que o DIAMOND pode fazer por você</h2>
+                <p>Conheça algumas das principais capacidades do DIAMOND e como ele pode transformar sua experiência digital.</p>
+            </div>
+            <div class="cards-container">
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Pesquisa e Documentação</h3>
+                    <p>Coleta de informações, verificação de fatos e criação de documentação detalhada sobre qualquer tópico.</p>
+                    <a href="./mvp/capacidades.html#pesquisa" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Análise de Dados</h3>
+                    <p>Processamento, análise e visualização de dados com gráficos e relatórios personalizados.</p>
+                    <a href="./mvp/capacidades.html#dados" class="btn btn-outline">Saiba mais</a>
+                </div>
+                <div class="card fade-in">
+                    <div class="card-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desenvolvimento</h3>
+                    <p>Criação de websites, aplicações e ferramentas personalizadas para resolver problemas específicos.</p>
+                    <a href="./mvp/capacidades.html#desenvolvimento" class="btn btn-outline">Saiba mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chamada para Ação -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pronto para começar?</h2>
+                <p>Explore todas as capacidades do DIAMOND ou veja uma demonstração interativa para entender como ele pode ajudar em seus projetos.</p>
+            </div>
+            <div class="page-navigation">
+                <a href="./mvp/capacidades.html" class="btn btn-primary">Próxima Página: Capacidades <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="page-indicator">
+                <div class="page-dot active"></div>
+                <div class="page-dot"></div>
+                <div class="page-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-info">
+                <div class="footer-logo">DIAMOND</div>
+                <p class="footer-text">Um assistente de IA avançado projetado para auxiliar em diversas tarefas digitais, desde pesquisas até desenvolvimento de software.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Navegação</h4>
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="./mvp/capacidades.html">Capacidades</a></li>
+                    <li><a href="./mvp/demo.html">Demonstração</a></li>
+                    <li><a href="https://diamond-game-ruddy.vercel.app/">Diamond Game </a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Documentação</a></li>
+                    <li><a href="#">Tutoriais</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2025 DIAMOND AI. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
